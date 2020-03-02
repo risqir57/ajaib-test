@@ -30,13 +30,13 @@ print(f"2. Merge 2 sorted arrays => {my_merge}")
 
 
 # 3. Tree Format
-def pprint_tree(node, file=None, _prefix="", _last=True):
+def printTree(node, file=None, _prefix="", _last=True):
     print(_prefix, "`- " if _last else "|- ", node.value, sep="", file=file)
     _prefix += "   " if _last else "|  "
     child_count = len(node.children)
     for i, child in enumerate(node.children):
         _last = i == (child_count - 1)
-        pprint_tree(child, file, _prefix, _last)
+        printTree(child, file, _prefix, _last)
 
 
 tree = Node("A", [
@@ -47,5 +47,5 @@ tree = Node("A", [
     Node("E"),
 ])
 print("3. Node Tree")
-pprint_tree(tree)
+printTree(tree)
 
