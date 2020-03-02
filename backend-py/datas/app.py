@@ -1,12 +1,13 @@
 from datas.classes.Node import Node
 
+
 # 1. Maximum diff
 def getMaxDiff(arr, arr_size):
     max_diff = arr[1] - arr[0]
 
     for i in range(0, arr_size):
         for j in range(i + 1, arr_size):
-            if (arr[j] - arr[i] > max_diff):
+            if arr[j] - arr[i] > max_diff:
                 max_diff = arr[j] - arr[i]
 
     return max_diff
@@ -38,33 +39,13 @@ def pprint_tree(node, file=None, _prefix="", _last=True):
         pprint_tree(child, file, _prefix, _last)
 
 
-tree = Node("Root", [
-    Node("Node 1", [
-        Node("Node 1.1", [
-            Node("Node 1.1.1", [
-                Node("Node 1.1.1.1"),
-                Node("Node 1.1.1.2"),
-            ]),
-        ]),
-        Node("Node 1.2"),
-        Node("Node 1.3", [
-            Node("Node 1.3.1")
-        ]),
-        Node("Node 1.4", [
-            Node("Node 1.4.1"),
-            Node("Node 1.4.2", [
-                Node("Node 1.4.2.1"),
-                Node("Node 1.4.2.2", [
-                    Node("Node 1.4.2.2.1"),
-                ]),
-            ]),
-        ]),
+tree = Node("A", [
+    Node("B"),
+    Node("C", [
+        Node("D"),
     ]),
-    Node("Node 2", [
-        Node("Node 2.1"),
-        Node("Node 2.2"),
-    ]),
-    Node("Node 3"),
+    Node("E"),
 ])
-
+print("3. Node Tree")
 pprint_tree(tree)
+
